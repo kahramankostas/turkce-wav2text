@@ -1,27 +1,32 @@
 
-### Bu kısa kod vereceğiniz klasör içersindeki wav dosyalarını aynı klasör içerinde ve aynı isimde txt dosyalarına çevirir. google API kullanıldığı için çalışma sırasında internet bağlantınızın olması gerekir
+# coding: utf-8
 
-## Gerekli modüllerin alınması.
-### SpeechRecognition modülü yoksa kurulumu yapar.
+# ### Bu kısa kod vereceğiniz klasör içersindeki wav dosyalarını aynı klasör içerinde ve aynı isimde txt dosyalarına çevirir. google API kullanıldığı için çalışma sırasında internet bağlantınızın olması gerekir
+
+# ## Gerekli modüllerin alınması.
+# ### SpeechRecognition modülü yoksa kurulumu yapar.
+
+# In[6]:
 
 
-```python
-!pip3 install SpeechRecognition
+get_ipython().system('pip3 install SpeechRecognition')
 import speech_recognition as sr
 import os
-```
-
-### wav dosyalarını içeren klasörünüzün ismini yazın - python/jupyter dosyası ile aynı klasör içerisinde olmalı
 
 
-```python
+# ### wav dosyalarını içeren klasörünüzün ismini yazın - python/jupyter dosyası ile aynı klasör içerisinde olmalı
+
+# In[8]:
+
+
 klasor="sesler"
-```
-
-### Bu fonksiyon klasör içersindeki wav dosyalarını bulur ve listeler
 
 
-```python
+# ### Bu fonksiyon klasör içersindeki wav dosyalarını bulur ve listeler
+
+# In[9]:
+
+
 def dosya_bul(yol,dosya_uzantisi):
     dosya_listesi = []
     for r, d, f in os.walk(yol):
@@ -31,19 +36,13 @@ def dosya_bul(yol,dosya_uzantisi):
     return dosya_listesi
 dosya_listesi=dosya_bul("./"+klasor,'.wav')
 dosya_listesi
-```
 
 
+# ## Tüm wav dosyalarını txt dosyasına çevirerek kaydeder.
+
+# In[10]:
 
 
-    ['./sesler\\3.wav']
-
-
-
-## Tüm wav dosyalarını txt dosyasına çevirerek kaydeder.
-
-
-```python
 for dosya in dosya_listesi:
     r = sr.Recognizer()
     islem_goren=sr.AudioFile(dosya)
@@ -58,7 +57,4 @@ for dosya in dosya_listesi:
         
     except Exception as e:
         print("HATA!!!: "+str(e))
-```
 
-    ./sesler\3.wav : Bir berber bir berbere gel 1'e birader Berberistan'da bir berber dükkanı açalım demiş
-    
