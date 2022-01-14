@@ -9,7 +9,7 @@
 # In[6]:
 
 
-get_ipython().system('pip3 install SpeechRecognition')
+#get_ipython().system('pip3 install SpeechRecognition')
 import speech_recognition as sr
 import os
 
