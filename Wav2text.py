@@ -16,7 +16,6 @@ import os
 
 # ### wav dosyalarını içeren klasörünüzün ismini yazın - python/jupyter dosyası ile aynı klasör içerisinde olmalı
 
-# In[8]:
 
 
 klasor="sesler"
