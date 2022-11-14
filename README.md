@@ -1,9 +1,7 @@
 
 ### Bu kısa kod vereceğiniz klasör içersindeki wav dosyalarını aynı klasör içerinde ve aynı isimde txt dosyalarına çevirir. google API kullanıldığı için çalışma sırasında internet bağlantınızın olması gerekir
-
 ## Gerekli modüllerin alınması.
 ### SpeechRecognition modülü yoksa kurulumu yapar.
-
 
 ```python
 !pip3 install SpeechRecognition
